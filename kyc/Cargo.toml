@@ -1,0 +1,24 @@
+[package]
+name = "kyc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+postgrest = "=1.6.0"
+reqwest = "0.12.9"
+tonic = "0.12.3"
+prost = "0.13.3"
+
+yoroi = { path = "../crates/yoroi" }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+serde = "1.0.215"
+hyper = "1.5.1"
+
+crypto = { path = "../crates/crypto" }
+
+[build-dependencies]
+tonic-build = { version = "0.12.3", features = ["prost"] }

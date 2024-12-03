@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package kyc;
+
+// The greeting service definition.
+service Kyc {
+  rpc ping(Ping) returns (Pong) {}
+  // Sends a greeting
+  rpc register (RegisterRequest) returns (RegisterResponse) {}
+}
+
+// The request message containing the user's name.
+message Ping {
+  string message = 1;
+}
+
+// The response message containing the greetings
+message Pong {
+  string message = 1;
+}
+
+// The request message containing the user's name.
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+}
+
+// The response message containing the greetings
+message RegisterResponse {
+  string message = 1;
+}
