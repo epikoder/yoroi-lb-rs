@@ -1,0 +1,30 @@
+workspace = { members = [
+    "crates/cache",
+    "crates/crypto",
+    "crates/locale",
+    "crates/queue",
+    "crates/yoroi",
+    "kyc",
+] }
+
+[package]
+name = "snapshop"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+salvo = "0.72"
+tokio = { version = "1", features = ["macros"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+postgrest = "=1.6.0"
+prost = "0.13.3"
+tonic = "0.12.3"
+
+yoroi = { path = "crates/yoroi" }
+
+
+[build-dependencies]
+tonic-build = "0.12.3"
